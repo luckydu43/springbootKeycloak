@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>CREATE !</title>
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <section>
+            <article>
+                <h2>CREATE.</h2>
+            </article>
+        </section>
+        <section>
+            <article>
+                <h1>Bienvenue sur la partie Create.</h1>
+            </article>
+            <article>Conformément au RGPD, vous avez un accès nul et non avenu sur les éventuelles données que vous espériez avoir devant les yeux.</article>
+            <article>Bah ouais, y a pas marqué "READ" dans le titre, faut l'savoir hein</article>
+            <article>La loi ne m'oblige pas à vous prévenir que vos frappes sont enregistrées. M'enfing là c'est un peu le but de cette page so STAY CALM AND ADD A USER</article>
+        </section>
+        <section>
+            <article>
+                <h:form id="formCREATE">
+                    <p:messages id="messages" showDetail="true" showSummary="false" autoUpdate="true"/>
+                    <section>
+                        <article>
+                            Nom
+                            <p:inputText placeholder="Login"
+                                         autocomplete="false"
+                                         label="Login :"
+                                         required="true"
+                                         value="#{createmb.userCree.userLogin}"/>
+                        </article>
+                        <article>
+                            Etat validité
+                            <p:inputText placeholder="Etat validite"
+                                         autocomplete="false"
+                                         required="true"
+                                         label="Etat validite"
+                                         value="#{createmb.userCree.etatActivite}">
+                            </p:inputText>
+                        </article>
+                    </section>
+                    <section>
+                        <article>
+                            <p:commandButton value="Créer un User"
+                                             actionListener="#{createmb.saveUser()}"
+                                             action="../readupdelete/readupdelete.xhtml"
+                                             type="submit"/>
+                            <p:commandButton value="Créer un Admin"
+                                             actionListener="#{createmb.saveAdmin()}"
+                                             action="../readupdelete/readupdelete.xhtml"
+                                             type="submit"/>
+                        </article>
+                    </section>
+                </h:form>
+            </article>
+        </section>
+    </h:body>
+</html>

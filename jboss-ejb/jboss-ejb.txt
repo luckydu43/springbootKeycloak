@@ -1,0 +1,13 @@
+<!-- https://mvnrepository.com/artifact/org.jboss/jboss-ejb-client-legacy -->
+<dependency>
+    <groupId>org.jboss</groupId>
+    <artifactId>jboss-ejb-client-legacy</artifactId>
+    <version>3.0.2.Final</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.jboss.ejb3/jboss-ejb3-ext-api -->
+<dependency>
+    <groupId>org.jboss.ejb3</groupId>
+    <artifactId>jboss-ejb3-ext-api</artifactId>
+    <version>2.2.0.Final</version>
+</dependency>

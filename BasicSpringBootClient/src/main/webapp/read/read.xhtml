@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>READ !</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <section>
+            <article>
+                <h2>READ.</h2>
+            </article>
+        </section>
+        <section>
+            <article>
+                <h1>Bienvenue sur la partie lecture.</h1>
+            </article>
+            <article>Conformément au RGPD, vous avez le droit de lecture total, inaliénable et ad vitam eternam sur les données que vous avez devant les yeux.</article>
+            <article>La loi m'oblige toutefois à vous prévenir que le CTRL+C CTRL+V est passible de 7 ans d'emprisonnement et de 450'000€ d'amende, conformément à l'article 31.4159 alinéa 42 du Code de la Route</article>
+        </section>
+        <section>
+            <article>
+                <p:dataTable id="user"
+                             value="#{readmb.allYourDataBaseAreBelongToUs}"
+                             var="user"
+                             emptyMessage="Aucun utilisateur n'a été trouvé."
+                             styleClass="convergenceTable"
+                             stickyHeader="true"
+                             lazy="true">
+                    <p:column headerText="Login">
+                        <h:outputText value="#{user.userLogin}" />
+                    </p:column>
+                    <p:column headerText="Etat d'activité">
+                        <h:outputText value="#{user.etatActivite}" />
+                    </p:column>
+                    <p:column headerText="droits">
+                        <p:dataList value="#{user.droits}"
+                                    var="droit"
+                                    type="ordered"
+                                    lazy="true">
+                            #{droit.droitNom}
+                        </p:dataList>
+                    </p:column>
+                </p:dataTable>
+            </article>
+        </section>
+    </h:body>
+</html>

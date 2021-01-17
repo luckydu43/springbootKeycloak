@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>RUD !</title>
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <section>
+            <article>
+                <h2>RUD.</h2>
+            </article>
+        </section>
+        <section>
+            <article>
+                <h1>Bienvenue sur la partie Read, Update et Delete.</h1>
+            </article>
+            <article>Conformément au RGPD, vous avez un accès admin level NSA inaliénable et ad vitam eternam sur les données que vous avez devant les yeux.</article>
+            <article>La loi m'oblige toutefois à vous prévenir que vos frappes sont enregistrées à des fins de manipulation des données. </article>
+        </section>
+        <section>
+            <article>
+                <h:form id="formCUD">
+                    <p:messages id="messages" showDetail="true" showSummary="false" autoUpdate="true"/>
+                    <p:dataTable id="users"
+                                 value="#{readupdeletemb.allYourDataBaseAreBelongToUs}"
+                                 var="user"
+                                 emptyMessage="Aucun utilisateur n'a été trouvée."
+                                 styleClass="convergenceTable"
+                                 stickyHeader="true"
+                                 editable="true"
+                                 editMode="cell"
+                                 widgetVar="cellUsers"
+                                 selectionMode="single"
+                                 rowKey="#{user.userId}"
+                                 selection="#{readupdeletemb.userSelectionne}">
+                        <p:column headerText="Login">
+                            <p:inputText id="userLogin"
+                                         value="#{user.userLogin}"
+                                         style="width:96%"/>
+                        </p:column>
+                        <p:column headerText="Etat d'activité">
+                            <p:inputText id="etatActivite"
+                                         value="#{user.etatActivite}"
+                                         style="width:96%"/>
+                        </p:column>
+                        <p:column headerText="Droits">
+                            <p:dataList value="#{user.droits}"
+                                        var="droit"
+                                        type="ordered">
+                                #{droit.droitNom}
+                            </p:dataList>
+                        </p:column>
+                    </p:dataTable>
+                    <p:contextMenu for="users" selectionMode="single" widgetVar="cMenu">
+                        <p:menuitem value="Editer"
+                                    icon="ui-icon-pencil"
+                                    onclick="PF('cellUsers').showCellEditor();return false;"/>
+                        <p:menuitem value="Persister les modifs"
+                                    icon="ui-icon-disk"
+                                    actionListener="#{readupdeletemb.saveUser()}"
+                                    update="formCUD"/>
+                        <p:menuitem value="Supprimer"
+                                    icon="ui-icon-trash"
+                                    actionListener="#{readupdeletemb.supprimer()}"
+                                    update="@form"/>
+                        <p:menuitem value="Cacher menu"
+                                    icon="ui-icon-close"
+                                    onclick="PF('cMenu').hide()"/>
+                    </p:contextMenu>
+                </h:form>
+            </article>
+        </section>
+    </h:body>
+</html>

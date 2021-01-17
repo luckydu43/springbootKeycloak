@@ -1,0 +1,1 @@
+{"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"D:/developpement/java/springboottest/vagrant","disabled":false,"__vagrantfile":true},"vagrant-cache":{"id":"vagrant-cache","guestpath":"/tmp/vagrant-cache","hostpath":"W:/home/.vagrant.d/cache/centos7.4","disabled":false,"__vagrantfile":true}}}

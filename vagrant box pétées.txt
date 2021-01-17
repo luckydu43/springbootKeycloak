@@ -1,0 +1,2 @@
+vboxmanage list vms
+D:/developpement/java/pavic/vagrant/.vagrant/machines/
