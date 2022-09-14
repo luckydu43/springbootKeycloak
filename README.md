@@ -81,16 +81,14 @@ A ceux à qui je l'ai dit et/ou qui sont curieux...
 
 private Consumer<SpringBoot> consumerDeploiement = this.contenuConsumerDeploiement(this.vousBossez, this.serveurPasLance);
 
-private void contenuConsumerDeploiement(final Object pVousBossez, final Object pServeurPasLance) {
-	TANT_QUE (pVousBossez != FALSE)
-		SI (pServeurPasLance != FALSE)
-		ALORS ========= Lancement du serveur WildFly depuis Netbeans (Services, Servers, clic droit sur le serveur Wildfly, Start)
-		FIN_SI
-		======= Exécution du script bat, ou appui sur une touche avec le focus sur la fenêtre du .bat pour livrer le .war sur le wildfly
-	FIN_TANT_QUE
+private void contenuConsumerDeploiement(final boolean pVousBossez, final boolean pServeurPasLance){
+while (pVousBossez) {
+if (pServeurPasLance) {
+Netbeans.Services().Servers().Wildfly().execute();
 }
-
-#C'estPasFaux
+scriptBatDeLivraisonDesWarSurWildfly().run();
+}
+}
 
 Idéalement faudrait voir si on peut les déployer par la touche "debug" de l'IDE, pas essayé.
 
