@@ -1,7 +1,7 @@
 ################################################
-#### FIN DU PROJET : 02/08/2018             ####
-#### Ceci explique la pile logicielle datée ####
-#### REPRISE DU PROJET : 14/09/2022         ####
+# FIN DU PROJET : 02/08/2018
+# Ceci explique la pile logicielle datée
+# REPRISE DU PROJET : 14/09/2022
 ################################################
 
 Wilkommen !
@@ -14,9 +14,9 @@ UPDATE : Désormais le code va fonctionner avec Netbeans 15, openjdk 13.0.7 et sp
 
 Je vais considérer votre JDK bien installé et votre IDE configuré sur elle, ainsi qu'avec maven.
 
-###########################
-Tout part donc de Netbeans.
-###########################
+################################################
+# Tout part donc de Netbeans.
+################################################
 
 Dans Tools/Plugins, onglet Downloaded, vous pourrez ajouter le plugin 1520272942_nb-springboot-plugin-2.0.nbm
 Il lui permet de créer/ouvrir des projets basés sur springboot.
@@ -35,9 +35,9 @@ De là, la mise à jour de votre repository Maven va devenir rapidement une nécess
 
 Là, vous devriez être prêt à compiler le projet sans heurt.
 
-#######
-Vagrant
-#######
+################################################
+# Vagrant
+################################################
 
 1.	Extrayez le contenu du répertoire vagrant.7z dans le répertoire de ce projet.
 2.	Dans le fichier Vagrantfile, ligne 15, remplacer la valeur actuelle de config.vm.box par "centos-7.4-IAP7.box"
@@ -51,9 +51,9 @@ Problème. Je vous ai vendu Wildfly mais j'en ai pas encore parlé.
 
 ... hum.
 
-########
-Wildfly.
-########
+################################################
+# Wildfly
+################################################
 
 1. 	Téléchargez wildfly-12.0.0.Final.zip à partir du NAS (outils/Applications portables) puis décompressez le fichier dans D:\programs\portable
 	Dans Netbeans, onglet Services (accessible par le menu Window s'il n'est pas affiché), clic droit sur Servers puis (Add Server)
@@ -65,9 +65,11 @@ Wildfly.
 
 De là, votre serveur est prêt à être lancé. Mais il n'est pas prêt à déployer votre projet !
 
-####################################
-CE QUI SUIT NE CONCERNE QUE LES PLUS BRAVES, CEUX QUI ONT REUSSI A FAIRE AFFICHER "BUILD SUCCESS" À LEUR IDE
-####################################
+################################################
+# CE QUI SUIT NE CONCERNE QUE LES PLUS BRAVES,
+# CEUX QUI ONT REUSSI A FAIRE AFFICHER "BUILD 
+# SUCCESS" À LEUR IDE
+################################################
 
 Je précise que les 3 procédures qui suivent ne sont pas du tout idéales mais que si je savais faire mieux je le ferais
 
@@ -76,9 +78,10 @@ A ceux à qui je l'ai pas dit et/ou qui pensent le contraire (amis linuxiens rapp
 
 A ceux à qui je l'ai dit et/ou qui sont curieux...
 
-##########################
-Voici mon consumer de déploiement du war du projet sur WildFly :
-##########################
+################################################
+# Voici mon consumer de déploiement du war du
+# projet sur WildFly :
+################################################
 
 private Consumer<SpringBoot> consumerDeploiement = this.contenuConsumerDeploiement(this.vousBossez, this.serveurPasLance);
 
@@ -95,9 +98,9 @@ private void contenuConsumerDeploiement(final Object pVousBossez, final Object p
 
 Idéalement faudrait voir si on peut les déployer par la touche "debug" de l'IDE, pas essayé.
 
-###################
-Execution du projet
-###################
+################################################
+# Execution du projet
+################################################
 
 http://localhost:8080/client/index.xhtml
 
@@ -107,9 +110,9 @@ Meuh non : actuellement la base de données est censée être vide, il vous faut la
 Mais pour remplir une base faut déjà avoir une connexion établie
 J'imagine donc que la box vagrant est déjà montée et provisionnée, parce que sinon vous allez avoir du mal à faire marcher ce qui suit :
 
-#####################
-Se connecter à la BDD
-#####################
+################################################
+# Se connecter à la BDD
+################################################
 
 1. 	Dans NETBEANS, Services, clic droit sur Databases, New Connection
 2. 	Choisir PostGreSQL 9.2, normalement le driver est déjà sélectionné
@@ -124,9 +127,9 @@ Se connecter à la BDD
 	
 	Testez la connexion, si tout va bien cliquez sur Finish
 
-##############
-Remplir la BDD
-##############
+################################################
+# Remplir la BDD
+################################################
 
 La BDD est tapée par le projet BasicSpringbootProject, ce qui suit le concerne, lui et seulement lui.
 
@@ -135,9 +138,9 @@ La BDD est tapée par le projet BasicSpringbootProject, ce qui suit le concerne, 
 1. 	Dans Netbeans, onglet Services, Databases, clic droit sur la base de données springboot puis "Execute Command"
 2.	CTRL+V puis CTRL+MAJ+E
 
-#######################
-Execution du projet bis
-#######################
+################################################
+# Execution du projet bis
+################################################
 
 http://localhost:8080/client/index.xhtml
 
@@ -147,8 +150,8 @@ Bon dev :-)
 
 Ah et pour ce qui est de savoir quoi lire/comprendre/modifier/pastoucher du code que vous avez devant les yeux... une présentation qui va bien devrait être faite par mes soins prochainement.
 
-####################################################
-#### NOTES :
-####################################################
+################################################
+# NOTES :
+################################################
 - Pour définir la clé SSH utilisée pour le repo local :
 $ git config --add --local core.sshCommand 'ssh -i /home/lucky/.ssh/springbootKeycloak'
