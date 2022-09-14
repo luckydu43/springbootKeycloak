@@ -1,5 +1,6 @@
 package com.example.springbootapplication;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -25,6 +26,7 @@ public class BasicApplicationTests {
     /**
      * Test de bon fonctionnement de l'application tout court.
      */
+    //@Ignore
     @Test
     public void contextLoads() {
     }
