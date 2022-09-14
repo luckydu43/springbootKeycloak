@@ -7,6 +7,8 @@
 Wilkommen !
 
 Vous trouverez sur ce dossier l'essentiel (et plus encore) pour créer un projet RESTful avec le framework springboot sous l'IDE Netbeans, et ce à partir du tutoriel springresttemplate.pdf (que je vous invite à parcourir le temps de l'installation/copie/décompression/waiting for task ending/BSOD/insérerCauseD'AttenteIci)
+
+
 La pile logicielle retenue pour l'exécution de ce projet est ~Netbeans 8.1 (fonctionne sous 8.2)~, Wilfly 12.0.0, PostGreSQL 9.2, ~springboot 2.0.1, jdk 1.8.0.172~ et maven 3.3.9.
 UPDATE : Désormais le code va fonctionner avec Netbeans 15, openjdk 13.0.7 et springboot 3.1
 
