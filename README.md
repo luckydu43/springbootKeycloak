@@ -1,6 +1,5 @@
 ################################################
 # FIN DU PROJET : 02/08/2018
-# Ceci explique la pile logicielle datée
 # REPRISE DU PROJET : 14/09/2022
 ################################################
 
@@ -66,9 +65,7 @@ Problème. Je vous ai vendu Wildfly mais j'en ai pas encore parlé.
 De là, votre serveur est prêt à être lancé. Mais il n'est pas prêt à déployer votre projet !
 
 ################################################
-# CE QUI SUIT NE CONCERNE QUE LES PLUS BRAVES,
-# CEUX QUI ONT REUSSI A FAIRE AFFICHER "BUILD 
-# SUCCESS" À LEUR IDE
+# CE QUI SUIT NE CONCERNE QUE LES PLUS BRAVES, CEUX QUI ONT REUSSI A FAIRE AFFICHER "BUILD SUCCESS" À LEUR IDE
 ################################################
 
 Je précise que les 3 procédures qui suivent ne sont pas du tout idéales mais que si je savais faire mieux je le ferais
@@ -79,8 +76,7 @@ A ceux à qui je l'ai pas dit et/ou qui pensent le contraire (amis linuxiens rapp
 A ceux à qui je l'ai dit et/ou qui sont curieux...
 
 ################################################
-# Voici mon consumer de déploiement du war du
-# projet sur WildFly :
+# Voici mon consumer de déploiement du war du projet sur WildFly :
 ################################################
 
 private Consumer<SpringBoot> consumerDeploiement = this.contenuConsumerDeploiement(this.vousBossez, this.serveurPasLance);
