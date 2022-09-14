@@ -1,12 +1,14 @@
 ################################################
 #### FIN DU PROJET : 02/08/2018             ####
 #### Ceci explique la pile logicielle datée ####
+#### REPRISE DU PROJET : 14/09/2022         ####
 ################################################
 
 Wilkommen !
 
 Vous trouverez sur ce dossier l'essentiel (et plus encore) pour créer un projet RESTful avec le framework springboot sous l'IDE Netbeans, et ce à partir du tutoriel springresttemplate.pdf (que je vous invite à parcourir le temps de l'installation/copie/décompression/waiting for task ending/BSOD/insérerCauseD'AttenteIci)
-La pile logicielle retenue pour l'exécution de ce projet est Netbeans 8.1 (fonctionne sous 8.2), Wilfly 12.0.0, PostGreSQL 9.2, springboot 2.0.1, jdk 1.8.0.172 et maven 3.3.9.
+La pile logicielle retenue pour l'exécution de ce projet est ~Netbeans 8.1 (fonctionne sous 8.2)~, Wilfly 12.0.0, PostGreSQL 9.2, ~springboot 2.0.1, jdk 1.8.0.172~ et maven 3.3.9.
+UPDATE : Désormais le code va fonctionner avec Netbeans 15, openjdk 13.0.7 et springboot 3.1
 
 Je vais considérer votre JDK bien installé et votre IDE configuré sur elle, ainsi qu'avec maven.
 
@@ -142,3 +144,9 @@ Là normalement vous savez tout faire, il ne vous reste plus qu'à faire briller c
 Bon dev :-)
 
 Ah et pour ce qui est de savoir quoi lire/comprendre/modifier/pastoucher du code que vous avez devant les yeux... une présentation qui va bien devrait être faite par mes soins prochainement.
+
+####################################################
+#### NOTES :
+####################################################
+- Pour définir la clé SSH utilisée pour le repo local :
+$ git config --add --local core.sshCommand 'ssh -i /home/lucky/.ssh/springbootKeycloak'
