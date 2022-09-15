@@ -1,0 +1,80 @@
+#######################################
+# ouvrir une console avec l'user postgres
+#######################################
+sudo -i -u postgres
+
+#######################################
+# Depuis cette console on peut créer un utilisateur (rôle) avec la commande :
+#######################################
+createuser --interactive
+
+#######################################
+# Ouvrir la console d'admin de postgres
+#######################################
+psql
+psql -d springbootdb
+
+#######################################
+# Statut de la connexion actuelle
+#######################################
+\conninfo
+
+#######################################
+# Liste des databases
+#######################################
+\l
+
+#######################################
+# Créer une database
+#######################################
+create database springbootdb;
+
+#######################################
+# Ajouter les droits d'accès d'une database à un user
+####################################### 
+grant all privileges on database springbootdb to "springboot";
+
+#######################################
+# Modifier le mot de passe d'un utilisateur
+#######################################
+\password springboot
+
+#######################################
+# Créer un schéma
+#######################################
+create schema basic;
+
+#######################################
+# Attribuer les droits de ce schéma à un utilisateur
+#######################################
+grant all privileges on all tables in schema basic to springboot;
+
+#######################################
+# Lister les schémas
+#######################################
+select schema_name from information_schema.schemata;
+
+#######################################
+# Suppression d'un utilisateur
+#######################################
+L'opération est presque triviale mais ne l\'est pas.
+La commande, à appliquer après un
+$ sudo -u -i postgres
+est
+$ dropuser springboot -e
+Cette commande donne 2 possibilités :
+- DROP ROLE springboot;
+- role "springboot" cannot be dropped because some objects depend on it
+Le premier cas est le cas nominal et attendu, le second un peu moins.
+Pour régler le second il convient de supprimer, ou plutôt de redistribuer les ressources appartenant à l'utilisateur à un autre utilisateur, dans le doute choisir l\'utilisateur root, c-à-d postgres
+Pour ce faire, pour CHAQUE DATABASE concernée, faire un
+$ psql -d sporngbootdb
+puis un
+$ reassign owned by springboot to postgres;
+$ drop owned by springboot;
+Après réessai, le dropuser devrait marcher.
+
+#################################
+# Veille prolongée
+#################################
+sudo pm-hibernate
