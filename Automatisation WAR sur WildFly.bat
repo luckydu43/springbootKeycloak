@@ -1,9 +1,9 @@
 @echo off
 color 0a
-title Mise a jour...
+title Mise â€¦ jour...
 mode con: cols=159 lines=62
 
-REM ## emplacement du .bat chez vous, que je puisse faire le test de mise à jour #
+REM ## emplacement du .bat chez vous, que je puisse faire le test de mise à¹€ jour #
 set racineBatChezVous=%cd%
 REM ## Nom du .bat
 set nomBat=Automatisation WAR sur Wildfly.bat
@@ -19,65 +19,94 @@ set datecible=%datecible: =-%
 set datesource=%datesource: =-%
 
 
-REM On vérifie que le fichier source est bien plus récent que le cible
+REM On và¹‰rifie que le fichier source est bien plus rà¹‰cent que le cible
 set "sdatecible=%datecible:~6,4%%datecible:~3,2%%datecible:~0,2%
 set "sdatesource=%datesource:~6,4%%datesource:~3,2%%datesource:~0,2%
 if %sdatecible% LSS %sdatesource% if %sdatecible% NEQ %sdatesource% goto majdispo
 goto variables
 
 :majdispo
-echo 	Une mise a jour est actuellement disponible.
+echo 	Une mise â€¦ jour est actuellement disponible.
 echo.
 echo.
-echo ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
-echo º  Voulez-vous mettre le bat a jour ? 1 = oui, 0 = non      º
-echo ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+echo à¸©à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸›
+echo à¸š  Voulez-vous mettre le bat â€¦ jour ? 1 = oui, 0 = non      à¸š
+echo à¸¨à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸œ
 set /p saisie=}
 echo.
 
 if /i %saisie% NEQ 1 goto majAnnulee
 echo.
-echo ÍÍÍÍÍ Dernier rempart : la conf sera mise a z‚ro ÍÍÍÍÍ
+echo à¸­à¸­à¸­à¸­à¸­ Dernier rempart : la conf sera mise â€¦ zÂ‚ro à¸­à¸­à¸­à¸­à¸­
 echo 	- Confirmez en appuyant sur une touche.
 echo 	- Annulez en fermant cette fenetre & pause>nul
 echo.
-echo 	T‚l‚chargement en cours...
+echo 	TÂ‚lÂ‚chargement en cours...
 copy /y %batLivreSurCommun% %racineBatChezVous%
 echo.
-echo 	F‚licitations ! Votre .bat est a jour !
+echo 	FÂ‚licitations ! Votre .bat est â€¦ jour !
 start "bat" "%racineBatChezVous%\%nomBat%"
 exit
 
 :majAnnulee
 echo.
-echo 	La mise a jour a bien ‚t‚ annul‚e ;-)
+echo 	La mise â€¦ jour a bien Â‚tÂ‚ annulÂ‚e ;-)
 echo.
+
+
+
+
+
+
+
+
 
 :variables
 REM ##############################################################################
-REM ######################### Definir ces variables !!! ##########################
+REM ######################### Dà¹‰finir ces variables !!! ##########################
 REM ##############################################################################
 REM ####################################  |  #####################################
 REM #################################### \|/ #####################################
 REM ####################################  *  #####################################
 REM ##############################################################################
 
-REM ####################### emplacement du WAR UN #######################
-set TARGET_UN=D:\utilisateurs\l.duperron\Documents\NetBeansProjects\BasicSpringbootProject\target\
-set WAR_UN=basic-0.0.1-SNAPSHOT
+REM ########################## emplacement du WAR UN #############################
+set TARGET_UN=D:\developpement\java\TutoSpringBoot_et_REST\BasicSpringbootApiRest\target\
+set WAR_UN=apiRest-0.0.1-SNAPSHOT
 
-REM ########################## emplacement du WAR DEUX ##########################
-set TARGET_DEUX=D:\utilisateurs\l.duperron\Documents\NetBeansProjects\BasicSpringBootClient\target\
-set WAR_DEUX=springboot-restclient
+REM ########################## emplacement du WAR DEUX ###########################
+set TARGET_DEUX=D:\developpement\java\TutoSpringBoot_et_REST\BasicSpringbootApiRest2\target\
+set WAR_DEUX=apiRest2-0.0.1-SNAPSHOT
 
-REM ############## emplacement du répertoire deployments de Wildfly ##############
-set WILDFLY=d:\programs\portable\wildfly-12.0.0.Final\standalone\deployments\
+REM ########################## emplacement du WAR TROIS ##########################
+set TARGET_TROIS=D:\developpement\java\TutoSpringBoot_et_REST\BasicSpringBootClientWeb\target\
+set WAR_TROIS=springboot-restclient
+
+REM ############## emplacement du rà¹‰pertoire deployments de Wildfly ##############
+set WILDFLY=D:\programs\portable\wildfly-11.0.0.Final\standalone\deployments\
 
 REM ##############################################################################
 REM ####################################  ^  #####################################
 REM #################################### /|\ #####################################
 REM ####################################  |  #####################################
 REM ##############################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cls
+title Deploiement des WARs sur Wildfly
 
 REM Nombre d'iterations total
 set tentatives=0
@@ -95,47 +124,31 @@ echo  `.--/hd`smy/+dd`yNmmmmm`sds``.-`.hd:``-.`  `omdhhhdm'hdo-.     .yd+-..``-h
 echo  `---/dh`odo.-dh.sdo--yd`ody::yd:-hd+:+dy.` `odo..:hm'yms/:-.   .yd:`   `-hd+:ods.+dy--ods` `-hh-`    `ods--odo` `-hh::+dy--ds--ods'yd:``.hd`hd/--.`   `/h/`
 echo  oddmmmo.od+`-hh:sd/`.sd`omNmmNd:-hNNmmmh.` `od+``.hm'ymNNmmh:  .sd:`   `-dNmmmms./do. `do. `-hh-`    `+do.`+d+`  `:hdddh:.\do``/do-yh-``.yh`hNmmmdo`   `-``
 echo  .-:::-.`.-.``-.`.-` `.-..::/::-``-://::-`  `.-.` `.-..:///:-   `.-'`    `-:///:.`.-.``.-.`  `..`     `.-.``.-.`   `.---.` .-.` `-.`..`  `..`-:::::.`  `/y/`
-echo.
-
+pause
 set nbReussites=0
-if /i %tentatives% EQU 1 goto warUN
-if /i %tentatives% GTR 1 goto warDEUX
 
-:nettoyage
 title %livrable% WAR on Wildfly
 
-echo 	NETTOYAGE DU REPERTOIRE DEPLOIEMENTS DE WILDFLY
-echo.
-del %WILDFLY%*.* /f /q /s
-
-echo.
-if /i %tentatives% EQU 0 goto relancerScript
-
-echo.
-echo ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
-echo º  Appuyez sur une touche pour livrer les WARs sur Wildfly  º
-echo ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼ &pause>nul
-echo.
-echo ---
-echo ------
-echo ---------
-echo ------------
-echo ---------------
-echo ------------------
-echo -------------------------------------------------------------
-echo ------------------
-echo ---------------
-echo ------------
-echo ---------
-echo ------
-echo ---
 echo.
 
 REM Nombre de relances
 set relances=0
+
+set /a tentatives=%tentatives%+1
+
+
+
+
+
+
+
+
+
+
 :warUN
+
 echo.
-echo ÍÍÍÍÍ DEPLOIEMENT DU WAR UN... ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+echo à¸­à¸­à¸­à¸­à¸­ DEPLOIEMENT DU WAR UN... à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­
 echo.
 echo 	NETTOYAGE DES ANCIENS FICHIERS DU WAR UN...
 del %WILDFLY%%WAR_UN%.* /f /q /s
@@ -152,35 +165,43 @@ if exist %WILDFLY%%WAR_UN%.war if exist %WILDFLY%%WAR_UN%.war.undeployed goto ec
 if exist %WILDFLY%%WAR_UN%.war goto attenteUN
 REM CAS D'ECHEC
 :echecUN
-echo ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
-echo ºÍÍÍÍ Le WAR UN n'a pas ‚t‚ d‚ploy‚ :-( ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍº
-echo ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+echo à¸©à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸›
+echo à¸šà¸­à¸­à¸­à¸­ Le WAR UN n'a pas Â‚tÂ‚ dÂ‚ployÂ‚ :-( à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸š
+echo à¸¨à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸œ
 if exist %WILDFLY%%WAR_UN%.war.failed goto echecServeurUN
 REM Tentative de relance
 set /a relances=%relances%+1
 if /i %relances% EQU 3 goto warDEUX
-echo 	Une relance de d‚ploiement peut r‚gler ce probleme.
+echo 	Une relance de dÂ‚ploiement peut rÂ‚gler ce probleme.
 echo 	Au-dela de 2 relances inefficaces, j'abandonne.
-echo 	Vous en etes a la %relances% relance.
+echo 	Vous en etes â€¦ la %relances% relance.
 goto warUN
 :echecServeurUN
-echo 	L'erreur rencontr‚e est interne au serveur et ne peut etre
-echo 	r‚gl‚e par une simple relance.
+echo 	L'erreur rencontrÂ‚e est interne au serveur et ne peut etre
+echo 	rÂ‚glÂ‚e par une simple relance.
 echo 	Consulter les logs du serveur pourrait donner plus d'infos.
 goto warDEUX
 REM CAS NOMINAL
 :reussiteUN
-echo ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
-echo ºÍÍÍÍ Le WAR UN a ‚t‚ d‚ploy‚ avec grand succes ! ÍÍÍÍÍÍÍÍÍÍº
-echo ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+echo à¸©à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸›
+echo à¸šà¸­à¸­à¸­à¸­ Le WAR UN a Â‚tÂ‚ dÂ‚ployÂ‚ avec grand succes ! à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸š
+echo à¸¨à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸œ
 set /a nbReussites=1
+
+
+
+
+
+
+
+
 
 :warDEUX
 REM Nombre de relances
 set relances=0
 :DEUX
 echo.
-echo ÍÍÍÍÍ DEPLOIEMENT DU WAR DEUX... ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+echo à¸­à¸­à¸­à¸­à¸­ DEPLOIEMENT DU WAR DEUX... à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­
 echo.
 echo 	NETTOYAGE DES ANCIENS FICHIERS DU WAR DEUX...
 del %WILDFLY%%WAR_DEUX%.* /f /q /s
@@ -197,50 +218,107 @@ if exist %WILDFLY%%WAR_DEUX%.war if exist %WILDFLY%%WAR_DEUX%.war.undeployed got
 if exist %WILDFLY%%WAR_DEUX%.war goto attenteDEUX
 REM CAS D'ECHEC
 :echecDEUX
-echo ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
-echo ºÍÍÍÍ Le WAR DEUX n'a pas ‚t‚ d‚ploy‚ :-( ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍº
-echo ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+echo à¸©à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸›
+echo à¸šà¸­à¸­à¸­à¸­ Le WAR DEUX n'a pas Â‚tÂ‚ dÂ‚ployÂ‚ :-( à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸š
+echo à¸¨à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸œ
 if exist %WILDFLY%%WAR_DEUX%.war.failed goto echecServeurDEUX
 REM Tentative de relance
 set /a relances=%relances%+1
-if /i %relances% EQU 3 goto finDeploiement
-echo 	Une relance de d‚ploiement peut r‚gler ce probleme.
+if /i %relances% EQU 3 goto warTROIS
+echo 	Une relance de dÂ‚ploiement peut rÂ‚gler ce probleme.
 echo 	Au-dela de 2 relances inefficaces, j'abandonne.
-echo 	Vous en etes a la %relances% relance.
+echo 	Vous en etes â€¦ la %relances% relance.
 goto DEUX
 :echecServeurDEUX
-echo 	L'erreur rencontr‚e est interne au serveur et ne peut etre
-echo 	r‚gl‚e par une simple relance.
+echo 	L'erreur rencontrÂ‚e est interne au serveur et ne peut etre
+echo 	rÂ‚glÂ‚e par une simple relance.
+echo 	Consulter les logs du serveur pourrait donner plus d'infos.
+goto warTROIS
+REM CAS NOMINAL
+:reussiteDEUX
+echo à¸©à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸›
+echo à¸šà¸­à¸­à¸­à¸­ Le WAR DEUX a Â‚tÂ‚ dÂ‚ployÂ‚ avec grand succes ! à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸š
+echo à¸¨à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸œ
+set /a nbReussites=%nbReussites%+1
+
+
+
+
+
+
+
+
+
+:warTROIS
+REM Nombre de relances
+set relances=0
+:TROIS
+echo.
+echo à¸­à¸­à¸­à¸­à¸­ DEPLOIEMENT DU WAR TROIS... à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­
+echo.
+echo 	NETTOYAGE DES ANCIENS FICHIERS DU WAR TROIS...
+del %WILDFLY%%WAR_TROIS%.* /f /q /s
+echo.
+echo 	COPIE DU WAR SUR LE SERVEUR...
+copy /y "%TARGET_TROIS%%WAR_TROIS%.war" "%WILDFLY%"
+echo.
+echo 	LE WAR EST EN TRAIN D'ETRE DEPLOYE, PATIENTEZ SVP...
+:attenteTROIS
+ping 127.0.0.1 -n 2 > NUL 2>&1
+if exist %WILDFLY%%WAR_TROIS%.war if exist %WILDFLY%%WAR_TROIS%.war.deployed goto reussiteTROIS
+if exist %WILDFLY%%WAR_TROIS%.war if exist %WILDFLY%%WAR_TROIS%.war.failed goto echecTROIS
+if exist %WILDFLY%%WAR_TROIS%.war if exist %WILDFLY%%WAR_TROIS%.war.undeployed goto echecTROIS
+if exist %WILDFLY%%WAR_TROIS%.war goto attenteTROIS
+REM CAS D'ECHEC
+:echecTROIS
+echo à¸©à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸›
+echo à¸šà¸­à¸­à¸­à¸­ Le WAR TROIS n'a pas Â‚tÂ‚ dÂ‚ployÂ‚ :-( à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸š
+echo à¸¨à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸œ
+if exist %WILDFLY%%WAR_TROIS%.war.failed goto echecServeurTROIS
+REM Tentative de relance
+set /a relances=%relances%+1
+if /i %relances% EQU 3 goto finDeploiement
+echo 	Une relance de dÂ‚ploiement peut rÂ‚gler ce probleme.
+echo 	Au-dela de 2 relances inefficaces, j'abandonne.
+echo 	Vous en etes â€¦ la %relances% relance.
+goto TROIS
+:echecServeurTROIS
+echo 	L'erreur rencontrÂ‚e est interne au serveur et ne peut etre
+echo 	rÂ‚glÂ‚e par une simple relance.
 echo 	Consulter les logs du serveur pourrait donner plus d'infos.
 goto finDeploiement
 REM CAS NOMINAL
-:reussiteDEUX
-echo ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
-echo ºÍÍÍÍ Le WAR DEUX a ‚t‚ d‚ploy‚ avec grand succes ! ÍÍÍÍÍÍÍÍº
-echo ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+:reussiteTROIS
+echo à¸©à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸›
+echo à¸šà¸­à¸­à¸­à¸­ Le WAR TROIS a Â‚tÂ‚ dÂ‚ployÂ‚ avec grand succes ! à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸š
+echo à¸¨à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸œ
 set /a nbReussites=%nbReussites%+1
 
+
+
+
+
+
+
 :finDeploiement
+goto relancerScript
+
 echo.
 REM Si au moins un WAR a reussi sur cette iteration, on incremente.
 if /i %nbReussites% NEQ 0 set /a livrable=%livrable%+1
-
-REM Si, dans la premiere iteration, 2 WARs n'ont pas ete deployes, on affiche ce message
-if /i %livrable% EQU 1 if /i %nbReussites% NEQ 2 echo ÍÍÍÍÍ Des erreurs ont ‚t‚ rencontr‚es. ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
-REM Sinon on affiche celui-la
-if /i %livrable% EQU 1 if /i %nbReussites% EQU 2 echo ÍÍÍÍÍ Les WARs ont ‚t‚ livr‚s sur le serveur ! ÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
-
-REM Si, dans les iterations suivantes, 1 WAR n'a pas ete deploye, on affiche ce message
-if /i %livrable% GTR 1 if /i %nbReussites% NEQ 1 echo ÍÍÍÍÍ Des erreurs ont ‚t‚ rencontr‚es. ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
-REM Sinon on affiche celui-la
-if /i %livrable% GTR 1 if /i %nbReussites% EQU 1 echo ÍÍÍÍÍ Le WAR a ‚t‚ livr‚ sur le serveur ! ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+REM Si les 2 WARs n'ont pas à¹‰tà¹‰ deployà¹‰s, on affiche ce message
+if /i %nbReussites% EQU 0 echo à¸­à¸­à¸­à¸­à¸­ Des erreurs ont Â‚tÂ‚ rencontrÂ‚es pour les 2 WARs :'-) à¸­à¸­
+REM Si 1 WAR n'a pas ete deploye, on affiche ce message
+if /i %nbReussites% EQU 1 echo à¸­à¸­à¸­à¸­à¸­ Des erreurs ont Â‚tÂ‚ rencontrÂ‚es pour un des WARs. à¸­à¸­à¸­à¸­à¸­
+REM Si tous les WARs ont à¹‰tà¹‰ dà¹‰ployà¹‰s
+if /i %nbReussites% EQU 2 echo à¸­à¸­à¸­à¸­à¸­ Les WARs ont tous Â‚tÂ‚ livrÂ‚s sur le serveur ! à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­
 
 REM On affiche ce message pour moins de 10 livraisons reussies.
-if /i %livrable% GTR 1 if /i %livrable% LSS 10 if /i %nbReussites% EQU 1 echo ÍÍÍÍÍ %livrable% livraisons ont ‚t‚ r‚ussies aujourd'hui ! ÍÍÍÍÍÍÍÍÍÍÍ
+if /i %livrable% GTR 1 if /i %livrable% LSS 10 if /i %nbReussites% EQU 1 echo à¸­à¸­à¸­à¸­à¸­ %livrable% livraisons ont Â‚tÂ‚ rÂ‚ussies aujourd'hui ! à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­
 REM On affiche celui-ci pour plus de 10 livraisons reussies.
-if /i %livrable% GTR 9 if /i %livrable% LSS 100 if /i %nbReussites% EQU 1 echo ÍÍÍÍÍ %livrable% livraisons ont ‚t‚ r‚ussies aujourd'hui !
-REM Celui qui fait afficher ce message dans un cadre "normal" merite mon respect. Mais peut-on parler de normalite a un tel niveau de determination ?
-if /i %livrable% GTR 99 if /i %nbReussites% EQU 1 echo ÍÍÍÍÍ %livrable% livraisons ont ‚t‚ r‚ussies aujourd'hui ! Comment t'as fait ? o__O
+if /i %livrable% GTR 9 if /i %livrable% LSS 100 if /i %nbReussites% EQU 1 echo à¸­à¸­à¸­à¸­à¸­ %livrable% livraisons ont Â‚tÂ‚ rÂ‚ussies aujourd'hui !
+REM On affiche celui-ci pour plus de 100 livraisons reussies.
+if /i %livrable% GTR 99 if /i %nbReussites% EQU 1 echo à¸­à¸­à¸­à¸­à¸­ %livrable% livraisons ont Â‚tÂ‚ rÂ‚ussies aujourd'hui ! Tu as tout mon respect. Comment t'as fait pour atteindre un tel niveau de determination ? o__O
 
 set /a ratio=%livrable%/%tentatives%
 
@@ -248,15 +326,24 @@ if %tentatives% NEQ 0 set /a ratio=((%livrable%*100)/(%tentatives%))
 if %tentatives% EQU 0 set ratio=0
 echo Vous en etes a votre %tentatives% tentative, cela donne un taux de %ratio% / 100 ;-)
 
+
+
+
+
+
+
+
+
+
+
 :relancerScript
 title %livrable% WAR on Wildfly
 echo.
 
-echo ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
-echo º  Ces actions ont ‚t‚ termin‚es ce jour … %time%      º
-echo ÌÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¹
-echo º  Appuyez sur une touche pour deployer le WAR sur Wildfly  º
-echo ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼ &pause>nul
+echo à¸©à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸›
+echo à¸š  Ces actions ont Â‚tÂ‚ terminÂ‚es ce jour â€¦ %time%      à¸š
+echo à¸¬à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸™
+echo à¸š Appuyez sur une touche pour deployer les WARs sur Wildfly à¸š
+echo à¸¨à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸­à¸œ &pause>nul
 cls
-set /a tentatives=%tentatives%+1
 goto 1
